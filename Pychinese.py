@@ -1,7 +1,7 @@
 import sys
+from library.base import base_list
 from library.base import th_list
-
-print(th_list)
+print(base_list)
 
 
 def translate(pyc, py):
@@ -9,9 +9,9 @@ def translate(pyc, py):
     f_new = open(py, 'w', encoding='utf-8')
 
     for line in f:
-        for i in range(len(th_list)):
-            if th_list[i] in line:
-                line = line.replace(str(th_list[i]), "1")
+        for i in range(len(base_list)):
+            if base_list[i] in line:
+                line = line.replace(str(base_list[i]), str(th_list[i]))
         f_new.write(line)  # 将内容写入新文件中
     f.close()
     f_new.close()  # 关闭两个文件
