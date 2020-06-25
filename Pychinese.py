@@ -23,7 +23,7 @@ def run():
     local = os.path.abspath(".") + "run.py"
     local = str(local)
     os.system(f"python3 {local}")
-
+    os.remove(local)
 
 if __name__ == '__main__':
     translate(sys.argv[1])
