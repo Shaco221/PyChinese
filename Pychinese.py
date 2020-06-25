@@ -1,13 +1,15 @@
 import sys
-from library.base import base_list
-from library.base import th_list
-print(base_list)
+import os
+
+from library.base.base import base_list
+from library.base.base import th_list
 
 
-def translate(pyc, py):
+def translate(pyc):
     f = open(pyc, 'r', encoding='utf-8')
-    f_new = open(py, 'w', encoding='utf-8')
-
+    local = os.path.abspath(".") + "run.py"
+    local = str(local)
+    f_new = open(local, "w", encoding='utf-8')
     for line in f:
         for i in range(len(base_list)):
             if base_list[i] in line:
@@ -17,5 +19,12 @@ def translate(pyc, py):
     f_new.close()  # 关闭两个文件
 
 
+def run():
+    local = os.path.abspath(".") + "run.py"
+    local = str(local)
+    os.system(f"python3 {local}")
+
+
 if __name__ == '__main__':
-    translate(str(sys.argv[1]), str(sys.argv[2]))
+    translate(sys.argv[1])
+    run()
