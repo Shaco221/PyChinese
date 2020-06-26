@@ -25,6 +25,12 @@ def run():
     os.system(f"python3 {local}")
     os.remove(local)
 
+def indexerror():
+    print("请输入要执行的.pc文件！")
+
 if __name__ == '__main__':
-    translate(sys.argv[1])
-    run()
+    try:
+        translate(sys.argv[1])
+        run()
+    except IndexError:
+        indexerror()
