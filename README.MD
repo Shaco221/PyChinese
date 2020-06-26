@@ -6,7 +6,7 @@
 正在开发，现已支持基本的输入、输出。
 
 ## 使用方法
-- [安装Python3.x](https://www.python.org/downloads/) 
+- [安装Python3.8及以上](https://www.python.org/downloads/) 
 - 从 [Release页面](https://github.com/pychinese/pychinese/releases) 下载最新的Pychinese（适合自己系统的版本）  
 - 编写.pc文件。（ [参考文档](https://github.com/PyChinese/Document) ）
 - 运行`python3 Pychinese.py <.pc文件路径>`即可。
