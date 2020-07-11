@@ -1,12 +1,15 @@
 import sys
 import os
 
-from library.base.base import base_list
-from library.base.base import th_list
+from library.base import base_list
+from library.base import th_list
+
+# print(len(base_list))
+# print(len(th_list))
 
 
-def translate(pyc):
-    f = open(pyc, 'r', encoding='utf-8')
+def translate(pc):
+    f = open(pc, 'r', encoding='utf-8')
     local = os.path.abspath(".") + "run.py"
     local = str(local)
     f_new = open(local, "w", encoding='utf-8')
@@ -23,14 +26,16 @@ def run():
     local = os.path.abspath(".") + "run.py"
     local = str(local)
     os.system(f"python3 {local}")
-    os.remove(local)
+    # os.remove(local)
 
-def indexerror():
+
+def index_error():
     print("请输入要执行的.pc文件！")
+
 
 if __name__ == '__main__':
     try:
         translate(sys.argv[1])
         run()
     except IndexError:
-        indexerror()
+        index_error()
