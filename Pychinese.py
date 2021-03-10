@@ -4,10 +4,6 @@ import os
 from library.base import base_list
 from library.base import th_list
 
-# print(len(base_list))
-# print(len(th_list))
-
-
 def translate(pc):
     f = open(pc, 'r', encoding='utf-8')
     local = os.path.abspath(".") + "run.py"
@@ -25,8 +21,8 @@ def translate(pc):
 def run():
     local = os.path.abspath(".") + "run.py"
     local = str(local)
-    os.system(f"python3 {local}")
-    # os.remove(local)
+    os.system(f"python {local}")
+    os.remove(local)
 
 
 def index_error():
